@@ -12,4 +12,6 @@ type Player struct {
 	KeyPasses int
 	Tackles   int
 	ShotsOff  int
+
+	Fatigue float64
 }
