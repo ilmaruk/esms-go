@@ -1,7 +1,8 @@
 package models
 
 type Teamsheet struct {
-	Players []*Player
+	Players   []*Player
+	CurrentGK *Player
 
 	TeamShooting float64
 	TeamTackling float64
@@ -11,5 +12,6 @@ type Teamsheet struct {
 
 	ShotProb int
 
+	Score         int
 	FinalShotsOff int
 }
