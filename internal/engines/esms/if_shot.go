@@ -41,12 +41,12 @@ func IfShot(rnd random.Random, attacking, defending *models.Teamsheet) {
 		return
 	}
 
-	if !IsGoal(rnd, shooter) {
+	if !IsGoal(rnd, shooter, defending.CurrentGK) {
 		defending.CurrentGK.Saves++
 		return
 	}
 
-	if GoalIsCancelled() {
+	if GoalIsCancelled(rnd) {
 		return
 	}
 
