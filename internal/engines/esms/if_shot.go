@@ -35,8 +35,27 @@ func IfShot(rnd random.Random, attacking, defending *models.Teamsheet) {
 		return
 	}
 
-	if !OnTarget(rnd, attacking, shooter) {
+	if !OnTarget(rnd, shooter) {
 		shooter.ShotsOff++
 		attacking.FinalShotsOff++
+		return
+	}
+
+	if !IsGoal(rnd, shooter) {
+		defending.CurrentGK.Saves++
+		return
+	}
+
+	if GoalIsCancelled() {
+		return
+	}
+
+	attacking.Score++
+	shooter.Goals++
+	defending.CurrentGK.Conceded++
+
+	// RF: assister != nil should be enough
+	if chanceAssisted && assister != shooter {
+		assister.Assists++
 	}
 }
