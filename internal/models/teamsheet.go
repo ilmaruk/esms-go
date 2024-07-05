@@ -3,9 +3,9 @@ package models
 type Teamsheet struct {
 	Players []*Player
 
-	TeamShooting int
-	TeamTackling int
-	TeamPassing  int
+	TeamShooting float64
+	TeamTackling float64
+	TeamPassing  float64
 
 	Aggression int
 
