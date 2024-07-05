@@ -7,9 +7,9 @@ import (
 	"github.com/ilmaruk/esms-go/internal/random"
 )
 
-func whoDidIt(r random.Random, ts *models.Teamsheet, a Action) *models.Player {
-	var total, weight float64
-	var ar = make([]float64, 11)
+func WhoDidIt(r random.Random, ts *models.Teamsheet, a Action) *models.Player {
+	var total, weight int
+	var ar = make([]int, 11)
 
 	for i, p := range ts.Players {
 		switch a {
@@ -30,7 +30,7 @@ func whoDidIt(r random.Random, ts *models.Teamsheet, a Action) *models.Player {
 		ar[i] = weight
 	}
 
-	rv := r.FloatToMax(total)
+	rv := r.MyRandom(total)
 	k, _ := slices.BinarySearch(ar, rv)
 	return ts.Players[k]
 }
