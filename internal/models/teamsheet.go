@@ -10,4 +10,6 @@ type Teamsheet struct {
 	Aggression int
 
 	ShotProb int
+
+	FinalShotsOff int
 }

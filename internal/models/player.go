@@ -8,4 +8,8 @@ type Player struct {
 	Ag int
 
 	Side string
+
+	KeyPasses int
+	Tackles   int
+	ShotsOff  int
 }

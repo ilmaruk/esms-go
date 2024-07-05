@@ -17,7 +17,7 @@ import (
 // once again - but this happens only once. This increases the
 // chance of the player on the same side to be picked, but leaves
 // a possibility for other sides as well.
-func WhoGotAssisted(rnd random.Random, ts *models.Teamsheet, a *models.Player) *models.Player {
+func WhoGotAssist(rnd random.Random, ts *models.Teamsheet, a *models.Player) *models.Player {
 	var shooter = a
 
 	// Shooter and assister must be different, so re-run each time the same
